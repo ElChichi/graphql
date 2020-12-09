@@ -65,6 +65,7 @@ func (c *Client) do(ctx context.Context, op operationType, v interface{}, variab
 	if err != nil {
 		return err
 	}
+	fmt.Println("url is ", c.url)
 	resp, err := ctxhttp.Post(ctx, c.httpClient, c.url, "application/json", &buf)
 	if err != nil {
 		return err
